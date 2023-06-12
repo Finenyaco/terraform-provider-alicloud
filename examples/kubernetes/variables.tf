@@ -5,7 +5,8 @@ variable "k8s_number" {
 
 variable "availability_zone" {
   description = "The availability zones of vswitches."
-  default     = ["cn-hangzhou-b", "cn-hangzhou-e", "cn-hangzhou-f"]
+  type        = list(string)
+  default     = ["cn-shenzhen-d", "cn-shenzhen-e", "cn-shenzhen-f"]
 }
 
 # leave it to empty would create a new one
@@ -41,12 +42,12 @@ variable "new_nat_gateway" {
 # 3 masters is default settings,so choose three appropriate instance types in the availability zones above.
 variable "master_instance_types" {
   description = "The ecs instance types used to launch master nodes."
-  default     = ["ecs.n4.xlarge", "ecs.n4.xlarge", "ecs.sn1ne.xlarge"]
+  default     = ["ecs.c6e.large", "ecs.c6e.large", "ecs.c6e.large"]
 }
 
 variable "worker_instance_types" {
   description = "The ecs instance types used to launch worker nodes."
-  default     = ["ecs.sn1ne.xlarge", "ecs.n4.xlarge"]
+  default     = ["ecs.ic5.xlarge"]
 }
 
 # options: between 24-28
@@ -130,4 +131,3 @@ variable "cluster_addons" {
     },
   ]
 }
-

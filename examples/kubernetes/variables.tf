@@ -6,7 +6,6 @@ variable "k8s_number" {
 variable "availability_zone" {
   description = "The availability zones of vswitches."
   type        = list(string)
-  default     = ["cn-hangzhou-b", "cn-hangzhou-e", "cn-hangzhou-f"]
 }
 
 # leave it to empty would create a new one

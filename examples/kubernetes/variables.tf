@@ -12,13 +12,11 @@ variable "availability_zone" {
 # leave it to empty would create a new one
 variable "vpc_id" {
   description = "Existing vpc id used to create several vswitches and other resources."
-  type        = string
   default     = ""
 }
 
 variable "vpc_cidr" {
   description = "The cidr block used to launch a new vpc when 'vpc_id' is not specified."
-  type        = string
   default     = "10.0.0.0/8"
 }
 
@@ -38,7 +36,6 @@ variable "vswitch_cidrs" {
 
 variable "new_nat_gateway" {
   description = "Whether to create a new nat gateway. In this template, a new nat gateway will create a nat gateway, eip and server snat entries."
-  type        = string
   default     = "true"
 }
 

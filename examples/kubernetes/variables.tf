@@ -5,17 +5,20 @@ variable "k8s_number" {
 
 variable "availability_zone" {
   description = "The availability zones of vswitches."
+  type        = list(string)
   default     = ["cn-hangzhou-b", "cn-hangzhou-e", "cn-hangzhou-f"]
 }
 
 # leave it to empty would create a new one
 variable "vpc_id" {
   description = "Existing vpc id used to create several vswitches and other resources."
+  type        = string
   default     = ""
 }
 
 variable "vpc_cidr" {
   description = "The cidr block used to launch a new vpc when 'vpc_id' is not specified."
+  type        = string
   default     = "10.0.0.0/8"
 }
 
@@ -35,17 +38,20 @@ variable "vswitch_cidrs" {
 
 variable "new_nat_gateway" {
   description = "Whether to create a new nat gateway. In this template, a new nat gateway will create a nat gateway, eip and server snat entries."
+  type        = string
   default     = "true"
 }
 
 # 3 masters is default settings,so choose three appropriate instance types in the availability zones above.
 variable "master_instance_types" {
   description = "The ecs instance types used to launch master nodes."
+  type        = list(string)
   default     = ["ecs.n4.xlarge", "ecs.n4.xlarge", "ecs.sn1ne.xlarge"]
 }
 
 variable "worker_instance_types" {
   description = "The ecs instance types used to launch worker nodes."
+  type        = list(string)
   default     = ["ecs.sn1ne.xlarge", "ecs.n4.xlarge"]
 }
 
@@ -57,11 +63,13 @@ variable "node_cidr_mask" {
 
 variable "enable_ssh" {
   description = "Enable login to the node through SSH."
+  type        = bool
   default     = true
 }
 
 variable "install_cloud_monitor" {
   description = "Install cloud monitor agent on ECS."
+  type        = bool
   default     = true
 }
 

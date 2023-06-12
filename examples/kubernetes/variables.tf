@@ -111,7 +111,7 @@ variable "cluster_addons" {
   description = "Addon components in kubernetes cluster"
 
   type = list(object({
-    name   = string
+    name   = string, 
     config = string
   }))
 

@@ -49,7 +49,7 @@ variable "master_instance_types" {
 variable "worker_instance_types" {
   description = "The ecs instance types used to launch worker nodes."
   type        = list(string)
-  default     = ["ecs.c6.xlarge]
+  default     = ["ecs.c6.xlarge"]
 }
 
 # options: between 24-28

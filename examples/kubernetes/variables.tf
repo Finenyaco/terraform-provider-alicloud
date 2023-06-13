@@ -6,7 +6,7 @@ variable "k8s_number" {
 variable "availability_zone" {
   description = "The availability zones of vswitches."
   type        = list(string)
-  default     = ["cn-shenzhen-d"]
+  default     = ["cn-shenzhen-d", "cn-shenzhen-e", "cn-shenzhen-f"]
 }
 
 # leave it to empty would create a new one
@@ -31,7 +31,7 @@ variable "vswitch_ids" {
 variable "vswitch_cidrs" {
   description = "List of cidr blocks used to create several new vswitches when 'vswitch_ids' is not specified."
   type        = list(string)
-  default     = ["10.1.0.0/16"]
+  default     = ["10.1.0.0/16","10.2.0.0/16", "10.3.0.0/16"]
 }
 
 variable "new_nat_gateway" {
@@ -43,7 +43,7 @@ variable "new_nat_gateway" {
 variable "master_instance_types" {
   description = "The ecs instance types used to launch master nodes."
   type        = list(string)
-  default     = ["ecs.c6.xlarge"]
+  default     = ["ecs.s6-c1m2.large", "ecs.s6-c1m2.large", "ecs.s6-c1m2.large"]
 }
 
 variable "worker_instance_types" {
